@@ -36,14 +36,18 @@ function clr(num){
     console.log(x);
 }
 function del(num){
-    var x = document.getElementById("output-screen").value='';
-    x.value = num;
+    var x = document.getElementById("output-screen");
+    x.value = x.value.slice(0,-1);
     console.log(x);
 }
-function calculat(){
+function calculate(){
     var x = document.getElementById("output-screen");
-
+    try{
+        x.value = eval(x.value)
+    } 
+      catch(error){
+    
+        alert("invaild");
+    }
+    
 }
-
-
-
